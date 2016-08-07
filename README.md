@@ -1,5 +1,7 @@
 # mtneug/freetz
 
+[![](https://images.microbadger.com/badges/version/mtneug/freetz.svg)](https://hub.docker.com/r/mtneug/freetz/) [![](https://images.microbadger.com/badges/image/mtneug/freetz.svg)](http://microbadger.com/images/mtneug/freetz)
+
 This repository holds files for the `mtneug/freetz` Docker image, a [Freetz](https://freetz.org/) image build environment.
 
 ## Usage
