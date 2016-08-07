@@ -12,7 +12,7 @@ To build images you either can interactively use the `menuconfig` or a configura
 # Build with menuconfig
 $ docker run --rm -it -v $PWD/images:/freetz/images mtneug/freetz
 
-# Build with predifined config
+# Build with predefined .config
 $ docker run --rm -it -v $PWD/images:/freetz/images -v $PWD/config:/.config mtneug/freetz
 ```
 
