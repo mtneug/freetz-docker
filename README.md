@@ -1,12 +1,10 @@
 # mtneug/freetz
 
-This repository holds files for the `mtneug/freetz` Docker image, a
-[Freetz](https://freetz.org/) image build environment.
+This repository holds files for the `mtneug/freetz` Docker image, a [Freetz](https://freetz.org/) image build environment.
 
 ## Usage
 
-To build images you either can interactively use the `menuconfig` or a
-configuration file. Below you find some examples:
+To build images you either can interactively use the `menuconfig` or a configuration file. Below you find some examples:
 
 ```sh
 # Build with menuconfig
