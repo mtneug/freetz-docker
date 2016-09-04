@@ -6,6 +6,9 @@ shopt -s extglob
 print_usage() {
   echo "Usage:"
   echo "  build [branch]          Builds a Freetz image from [branch]"
+  echo "    --no-menuconfig         Do not start menuconfig"
+  echo "                            This is only possible if there already"
+  echo "                            exists a .config file in the root directory."
   echo "  clean                   Removes build output"
   echo "  help                    Prints this usage information"
   echo "  [cmd] [args...]         Runs [cmd] with given arguments"
@@ -26,35 +29,47 @@ clean() {
 }
 
 build() {
-  test "$#" -eq 1 || error "no branch specified"
+  test "$#" -ge 1 || error "no branch specified"
+  rev=$1
+  shift
 
   umask 0022
-  svn checkout "http://svn.freetz.org/$1" /freetz
+  svn checkout "http://svn.freetz.org/$rev" /freetz
+
   if test -e /.config; then
     echo "found .config file"
     cp /.config .
     make oldconfig
-    make menuconfig
-  else
-    echo "no .config file found"
-    echo "starting menuconfig"
-    make menuconfig
   fi
+
+  menuconfig "$@"
+  test -e .config || error "no .config file found"
   make
+}
+
+menuconfig() {
+  if [[ "$*" == *--no-menuconfig* ]]; then
+    echo "skipping menuconfig: --no-menuconfig is set"
+    return
+  fi
+  echo "starting menuconfig"
+  make menuconfig
 }
 
 main() {
   test "$#" -ne 0 || error
+  cmd="$1"
+  shift
 
-  case $1 in
+  case $cmd in
     build)
-      build "$2"
+      build "$@"
       ;;
     help)
       print_usage
       ;;
     *)
-      exec "$@"
+      exec "$cmd" "$@"
       ;;
   esac
 }

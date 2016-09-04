@@ -17,4 +17,4 @@ before_install:
 install: make build
 script:
   - make lint
-  - docker run --rm -it -v $PWD/testdata/$FREETZ_CONFIG:/.config mtneug/freetz
+  - docker run --rm -it -v $PWD/testdata/$FREETZ_CONFIG:/.config mtneug/freetz build trunk --no-menuconfig
