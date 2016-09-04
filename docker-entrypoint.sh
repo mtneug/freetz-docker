@@ -34,6 +34,7 @@ build() {
     echo "found .config file"
     cp /.config .
     make oldconfig
+    make menuconfig
   else
     echo "no .config file found"
     echo "starting menuconfig"
