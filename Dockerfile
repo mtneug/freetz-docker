@@ -6,8 +6,9 @@ RUN apt-get update \
       perl ruby python subversion git-core wget curl bzip2 unzip xz-utils \
       binutils composite build-essential make patch gcc gcc-multilib g++ \
       \
-      graphicsmagick autoconf automake automake1.9 libtool gettext flex bison \
-      texinfo tofrodos pkg-config ecj fastjar realpath gawk intltool \
+      graphicsmagick autoconf automake autopoint automake1.9 libtool gettext \
+      flex bison texinfo tofrodos pkg-config ecj fastjar realpath gawk \
+      intltool \
       \
       libusb-dev libacl1-dev libcap-dev libc6-dev-i386 lib32ncurses5-dev \
       lib32stdc++6 libglib2.0-dev libattr1-dev libncurses5-dev libreadline-dev \
