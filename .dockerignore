@@ -2,3 +2,6 @@
 .gitignore
 *.md
 Makefile
+.config
+config
+images
