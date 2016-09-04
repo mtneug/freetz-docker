@@ -1,4 +1,4 @@
-all: build
+all: lint build
 
 build:
 	docker build -t mtneug/freetz .
