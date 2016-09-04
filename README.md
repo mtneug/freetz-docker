@@ -1,6 +1,6 @@
 # mtneug/freetz
 
-[![](https://images.microbadger.com/badges/version/mtneug/freetz.svg)](https://hub.docker.com/r/mtneug/freetz/) [![](https://images.microbadger.com/badges/image/mtneug/freetz.svg)](http://microbadger.com/images/mtneug/freetz)
+[![Build Status](https://travis-ci.org/mtneug/docker-freetz.svg?branch=master)](https://travis-ci.org/mtneug/docker-freetz) [![](https://images.microbadger.com/badges/version/mtneug/freetz.svg)](https://hub.docker.com/r/mtneug/freetz/) [![](https://images.microbadger.com/badges/image/mtneug/freetz.svg)](http://microbadger.com/images/mtneug/freetz)
 
 This repository holds files for the `mtneug/freetz` Docker image, a [Freetz](https://freetz.org/) image build environment.
 
