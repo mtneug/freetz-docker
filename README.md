@@ -22,6 +22,9 @@ There are also some other commands:
 $ docker run --rm mtneug/freetz help
 Usage:
   build [branch]          Builds a Freetz image from [branch]
+    --no-menuconfig         Do not start menuconfig
+                            This is only possible if there already
+                            exists a .config file in the root directory.
   clean                   Removes build output
   help                    Prints this usage information
   [cmd] [args...]         Runs [cmd] with given arguments
