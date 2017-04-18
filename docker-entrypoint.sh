@@ -39,6 +39,7 @@ build() {
   echo "applying patches.."
   for p in /patches/*.patch
   do
+   [ -f "$p" ] || continue
    echo "Apply $p"
    patch -p1 < $p
   done
