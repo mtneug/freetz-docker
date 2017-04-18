@@ -36,6 +36,13 @@ build() {
   umask 0022
   svn checkout "http://svn.freetz.org/$rev" /freetz
 
+  echo "applying patches.."
+  for p in /patches/*.patch
+  do
+   echo "Apply $p"
+   patch -p1 < $p
+  done
+
   if test -e /.config; then
     echo "found .config file"
     cp /.config .
