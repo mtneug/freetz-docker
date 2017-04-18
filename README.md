@@ -16,6 +16,10 @@ $ docker run --rm -it -v $PWD/images:/freetz/images mtneug/freetz
 $ docker run --rm -it -v $PWD/images:/freetz/images -v $PWD/config:/.config mtneug/freetz
 ```
 
+# Build with patches
+# put your .patch files into $PWD/patches
+$ docker run --rm -it -v $PWD/patches:/patches -v $PWD/images:/freetz/images mtneug/freetz
+
 There are also some other commands:
 
 ```sh
