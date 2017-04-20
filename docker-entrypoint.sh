@@ -41,7 +41,7 @@ build() {
   do
    [ -f "$p" ] || continue
    echo "Apply $p"
-   patch -p1 < $p
+   patch -p1 < "$p"
   done
 
   if test -e /.config; then
