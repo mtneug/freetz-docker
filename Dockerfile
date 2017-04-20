@@ -20,9 +20,6 @@ RUN useradd freetz \
  && mkdir -p /patches \
  && chown -R freetz /patches
 
-RUN mkdir -p /patches \
- && chown -R freetz /patches
-
 WORKDIR /freetz
 USER freetz
 
