@@ -7,12 +7,16 @@ services:
 env:
   - FREETZ_CONFIG=type-7490
 
+addons:
+  apt:
+    sources:
+      - debian-sid
+    packages:
+      - shellcheck
+      - docker-ce
+
 before_install:
   - docker info
-
-  - echo "deb http://archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse" | sudo tee -a /etc/apt/sources.list
-  - sudo apt-get -qq update
-  - sudo apt-get -qq install shellcheck
   - shellcheck --version
 install: make build
 script:
