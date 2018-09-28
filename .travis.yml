@@ -14,7 +14,9 @@ addons:
 before_install:
   - docker info
   - shellcheck --version
-install: make build
+install: true
 script:
+  - make build
+after_success: 
   - make lint
   - docker run --rm -it -v $PWD/testdata/$FREETZ_CONFIG:/.config mtneug/freetz build trunk --no-menuconfig
