@@ -46,7 +46,7 @@ build() {
   if test -e /.config; then
     echo "found .config file"
     cp /.config .
-    make oldconfig
+    yes "" | make oldconfig
   fi
 
   menuconfig "$@"
