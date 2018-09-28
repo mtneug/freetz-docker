@@ -6,7 +6,7 @@ RUN apt-get update \
       perl ruby python subversion git-core wget curl bzip2 unzip xz-utils \
       binutils imagemagick build-essential make patch gcc gcc-multilib g++ \
       \
-      graphicsmagick autoconf automake autopoint libtool gettext \
+      graphicsmagick autoconf automake autopoint libtool-bin gettext \
       flex bison texinfo tofrodos pkg-config ecj fastjar gawk \
       intltool bc \
       \
