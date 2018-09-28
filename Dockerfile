@@ -8,7 +8,7 @@ RUN apt-get update \
       \
       graphicsmagick autoconf automake autopoint automake1.9 libtool gettext \
       flex bison texinfo tofrodos pkg-config ecj fastjar realpath gawk \
-      intltool \
+      intltool bc \
       \
       libusb-dev libacl1-dev libcap-dev libc6-dev-i386 lib32ncurses5-dev \
       lib32stdc++6 libglib2.0-dev libattr1-dev libncurses5-dev libreadline-dev \
