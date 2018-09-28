@@ -1,5 +1,4 @@
 sudo: required
-dist: trusty
 
 services:
   - docker
@@ -8,9 +7,6 @@ env:
   - FREETZ_CONFIG=type-7490
 
 addons:
-  apt:
-    sources:
-      - debian-sid
     packages:
       - shellcheck
       - docker-ce
