@@ -7,7 +7,7 @@ RUN apt-get update \
       binutils imagemagick build-essential make patch gcc gcc-multilib g++ \
       \
       graphicsmagick autoconf automake autopoint libtool gettext \
-      flex bison texinfo tofrodos pkg-config ecj fastjar realpath gawk \
+      flex bison texinfo tofrodos pkg-config ecj fastjar gawk \
       intltool bc \
       \
       libusb-dev libacl1-dev libcap-dev libc6-dev-i386 lib32ncurses5-dev \
