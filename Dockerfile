@@ -4,7 +4,7 @@ MAINTAINER Matthias Neugbauer <mtneug@mailbox.org>
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
       perl ruby python subversion git-core wget curl bzip2 unzip xz-utils \
-      binutils composite build-essential make patch gcc gcc-multilib g++ \
+      binutils imagemagick build-essential make patch gcc gcc-multilib g++ \
       \
       graphicsmagick autoconf automake autopoint libtool gettext \
       flex bison texinfo tofrodos pkg-config ecj fastjar realpath gawk \
