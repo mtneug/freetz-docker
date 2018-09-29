@@ -19,7 +19,7 @@ install: true
 
 script:
   - make IMAGE=$TRAVIS_REPO_SLUG
-  - mkdir $PWD/images
+  - mkdir $PWD/images ; chmod 777 $PWD/images
   - docker run --rm -it -v $PWD/testdata/$FREETZ_TEST_CONFIG:/.config -v $PWD/images:/freetz/images $TRAVIS_REPO_SLUG build trunk --no-menuconfig
   - test `ls $PWD/images/*.image -l | wc -l` -eq 1
 
