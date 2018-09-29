@@ -9,14 +9,16 @@ env:
 addons:
     packages:
       - shellcheck
-      - docker-ce
 
 before_install:
   - docker info
   - shellcheck --version
+
 install: true
+
 script:
   - docker build -t $GH_USER/$GH_REPO .
+
 after_success: 
   - shellcheck *.sh
   - docker run --rm -it -v $PWD/testdata/$FREETZ_TEST_CONFIG:/.config $GH_USER/$GH_REPO build trunk --no-menuconfig
