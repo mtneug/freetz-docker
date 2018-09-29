@@ -69,14 +69,11 @@ main() {
   shift
 
   case $cmd in
-    build)
-      build "$@"
-      ;;
     help)
       print_usage
       ;;
     *)
-      exec "$cmd" "$@"
+      "$cmd" "$@"
       ;;
   esac
 }
