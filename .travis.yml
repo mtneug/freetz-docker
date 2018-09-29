@@ -5,7 +5,7 @@ services:
   - docker
 
 env:
-  - GH_USER=mtneug GH_REPO=freetz FREETZ_TEST_CONFIG=type-7490
+  - FREETZ_TEST_CONFIG=type-7490
 
 addons:
     packages:
@@ -18,8 +18,8 @@ before_install:
 install: true
 
 script:
-  - make IMAGE=$GH_USER/$GH_REPO
+  - make IMAGE=$TRAVIS_REPO_SLUG
   - mkdir images
-  - docker run --rm -it -v $PWD/testdata/$FREETZ_TEST_CONFIG:/.config -v $PWD/images:/freetz/images $GH_USER/$GH_REPO build trunk --no-menuconfig
+  - docker run --rm -it -v $PWD/testdata/$FREETZ_TEST_CONFIG:/.config -v $PWD/images:/freetz/images $TRAVIS_REPO_SLUG build trunk --no-menuconfig
   - test `ls $PWD/images/*.image -l | wc -l` -eq 1
 
