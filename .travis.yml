@@ -18,8 +18,8 @@ before_install:
 install: true
 
 script:
-  - docker build -t $GH_USER/$GH_REPO .
-  - shellcheck *.sh
-  - docker run --rm -it -v $PWD/testdata/$FREETZ_TEST_CONFIG:/.config $GH_USER/$GH_REPO build trunk --no-menuconfig
-  - test `ls images/*.image -l | wc -l` -eq 1
+  - make IMAGE=$GH_USER/$GH_REPO
+  - mkdir images
+  - docker run --rm -it -v $PWD/testdata/$FREETZ_TEST_CONFIG:/.config -v $PWD/images:/freetz/images $GH_USER/$GH_REPO build trunk --no-menuconfig
+  - test `ls $PWD/images/*.image -l | wc -l` -eq 1
 
