@@ -1,13 +1,13 @@
-FROM ubuntu:14.04
+FROM ubuntu:18.04
 MAINTAINER Matthias Neugbauer <mtneug@mailbox.org>
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
       perl ruby python subversion git-core wget curl bzip2 unzip xz-utils \
-      binutils composite build-essential make patch gcc gcc-multilib g++ \
+      binutils imagemagick build-essential make patch gcc gcc-multilib g++ \
       \
-      graphicsmagick autoconf automake autopoint automake1.9 libtool gettext \
-      flex bison texinfo tofrodos pkg-config ecj fastjar realpath gawk \
+      graphicsmagick autoconf automake autopoint libtool-bin gettext \
+      flex bison texinfo tofrodos pkg-config ecj fastjar gawk \
       intltool bc \
       \
       libusb-dev libacl1-dev libcap-dev libc6-dev-i386 lib32ncurses5-dev \

@@ -46,7 +46,7 @@ build() {
   if test -e /.config; then
     echo "found .config file"
     cp /.config .
-    make oldconfig
+    yes "" | make oldconfig
   fi
 
   menuconfig "$@"
@@ -69,14 +69,11 @@ main() {
   shift
 
   case $cmd in
-    build)
-      build "$@"
-      ;;
     help)
       print_usage
       ;;
     *)
-      exec "$cmd" "$@"
+      "$cmd" "$@"
       ;;
   esac
 }

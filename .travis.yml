@@ -1,24 +1,25 @@
+language: minimal
 sudo: required
-dist: trusty
 
 services:
   - docker
 
 env:
-  - FREETZ_CONFIG=type-7490
+  - FREETZ_TEST_CONFIG=type-7490
 
 addons:
-  apt:
-    sources:
-      - debian-sid
     packages:
       - shellcheck
-      - docker-ce
 
 before_install:
   - docker info
   - shellcheck --version
-install: make build
+
+install: true
+
 script:
-  - make lint
-  - docker run --rm -it -v $PWD/testdata/$FREETZ_CONFIG:/.config mtneug/freetz build trunk --no-menuconfig
+  - make IMAGE=$TRAVIS_REPO_SLUG
+  - mkdir images ; chmod 777 images
+  - docker run --rm -it -v $PWD/testdata/$FREETZ_TEST_CONFIG:/.config -v $PWD/images:/freetz/images $TRAVIS_REPO_SLUG build trunk --no-menuconfig
+  - test `ls images/*.image -l | wc -l` -eq 1
+

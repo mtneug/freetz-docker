@@ -1,11 +1,12 @@
+IMAGE := mtneug/freetz
 all: lint build
 
 build:
-	docker build -t mtneug/freetz .
+	docker build -t $(IMAGE) .
 .PHONY: build
 
 clean:
-	-docker rmi mtneug/freetz
+	-docker rmi $(IMAGE)
 .PHONY: clean
 
 lint:
