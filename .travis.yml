@@ -1,5 +1,5 @@
+language: minimal
 sudo: required
-dist: trusty
 
 services:
   - docker
@@ -9,11 +9,8 @@ env:
 
 addons:
   apt:
-    sources:
-      - debian-sid
     packages:
       - shellcheck
-      - docker-ce
 
 before_install:
   - docker info
