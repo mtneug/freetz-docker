@@ -34,7 +34,12 @@ build() {
   shift
 
   umask 0022
-  svn checkout "http://svn.freetz.org/$rev" /freetz
+  # can't use clone as the directory could be non-empty
+  cd /freetz
+  git init
+  git remote add origin "https://github.com/Freetz/freetz.git"
+  git fetch
+  git checkout "$rev"
 
   echo "apply patches..."
   for p in /patches/*.patch; do
