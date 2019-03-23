@@ -10,6 +10,7 @@ print_usage() {
   echo "                            This is only possible if there already"
   echo "                            exists a .config file in the root directory."
   echo "  clean                   Removes build output"
+  echo "  tools                   Build tools"
   echo "  help                    Prints this usage information"
   echo "  [cmd] [args...]         Runs [cmd] with given arguments"
 }
@@ -28,7 +29,12 @@ clean() {
   rm -rf images/*
 }
 
-build() {
+tools() {
+  checkout "$@"
+  make tools
+}
+
+checkout() {
   test "$#" -ge 1 || error "no branch specified"
   rev=$1
   shift
@@ -40,6 +46,10 @@ build() {
   git remote add origin "https://github.com/Freetz/freetz.git"
   git fetch
   git checkout "$rev"
+}
+
+build() {
+  checkout "$@"
 
   echo "apply patches..."
   for p in /patches/*.patch; do
@@ -76,6 +86,9 @@ main() {
   case $cmd in
     build)
       build "$@"
+      ;;
+    tools)
+      tools "$@"
       ;;
     help)
       print_usage

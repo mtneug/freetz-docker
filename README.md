@@ -18,6 +18,9 @@ $ docker run --rm -it -v $PWD/images:/freetz/images -v $PWD/config:/.config mtne
 # Build with patches
 # put your .patch files into $PWD/patches
 $ docker run --rm -it -v $PWD/patches:/patches -v $PWD/images:/freetz/images mtneug/freetz
+
+# Build tools
+$ docker run --rm -it -v $PWD/tools:/freetz/tools mtneug/freetz tools
 ```
 
 There are also some other commands:
